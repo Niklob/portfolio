@@ -18,18 +18,18 @@ hamburger.addEventListener('click', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    const filterDropdown = document.getElementById('filter-kategori');
-    const portfolioItems = document.querySelectorAll('[data-kategori]');
+  const filterDropdown = document.getElementById('filter-kategori');
+  const portfolioItems = document.querySelectorAll('[data-kategori]');
 
-    filterDropdown.addEventListener('change', function () {
-        const selectedCategory = this.value;
+  filterDropdown.addEventListener('change', function () {
+      const selectedCategory = this.value;
 
-        portfolioItems.forEach(item => {
-            if (selectedCategory === 'all' || item.dataset.kategori === selectedCategory) {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
-            }
-        });
-    });
+      portfolioItems.forEach(item => {
+          if (selectedCategory === 'all' || item.dataset.kategori === selectedCategory) {
+              item.style.display = 'block';
+          } else {
+              item.style.display = 'none';
+          }
+      });
+  });
 });
