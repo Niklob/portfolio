@@ -16,3 +16,20 @@ hamburger.addEventListener('click', function () {
     hamburger.classList.toggle('hamburger-active');
     navMenu.classList.toggle('hidden');
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const filterDropdown = document.getElementById('filter-kategori');
+    const portfolioItems = document.querySelectorAll('[data-kategori]');
+
+    filterDropdown.addEventListener('change', function () {
+        const selectedCategory = this.value;
+
+        portfolioItems.forEach(item => {
+            if (selectedCategory === 'all' || item.dataset.kategori === selectedCategory) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
